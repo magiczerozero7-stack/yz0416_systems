@@ -16,9 +16,10 @@ interface ProfilePageProps {
   onBack?: () => void;
   onChangePassword?: () => void;
   onMyInstructions?: () => void;
+  onMyFollows?: () => void;
 }
 
-const ProfilePage: React.FC<ProfilePageProps> = ({ onLogout, onBack, onChangePassword, onMyInstructions }) => {
+const ProfilePage: React.FC<ProfilePageProps> = ({ onLogout, onBack, onChangePassword, onMyInstructions, onMyFollows }) => {
   return (
     <div className="flex flex-col h-full bg-[#F5F7FA] overflow-hidden">
       {/* Header Section */}
@@ -160,7 +161,10 @@ const ProfilePage: React.FC<ProfilePageProps> = ({ onLogout, onBack, onChangePas
             <ChevronRight size={18} className="text-gray-300" />
           </div>
 
-          <div className="bg-white rounded-xl p-4 flex items-center justify-between shadow-sm cursor-pointer active:bg-gray-50 transition-colors">
+          <div 
+            onClick={onMyFollows}
+            className="bg-white rounded-xl p-4 flex items-center justify-between shadow-sm cursor-pointer active:bg-gray-50 transition-colors"
+          >
             <div className="flex items-center space-x-3">
               <UserPlus size={18} className="text-[#2B7FFF]" />
               <span className="text-gray-600 text-sm">我的关注</span>

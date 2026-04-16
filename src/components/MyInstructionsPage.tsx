@@ -5,9 +5,10 @@ import { MY_INSTRUCTIONS_DATA } from '../data';
 
 interface MyInstructionsPageProps {
   onBack: () => void;
+  onSelect: (id: number) => void;
 }
 
-const MyInstructionsPage: React.FC<MyInstructionsPageProps> = ({ onBack }) => {
+const MyInstructionsPage: React.FC<MyInstructionsPageProps> = ({ onBack, onSelect }) => {
   return (
     <div className="flex flex-col min-h-full bg-[#F5F7FA]">
       {/* Header - Sticky for better UX while scrolling */}
@@ -29,7 +30,8 @@ const MyInstructionsPage: React.FC<MyInstructionsPageProps> = ({ onBack }) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1 }}
-            className="bg-white rounded-xl p-5 shadow-sm border border-gray-50"
+            onClick={() => onSelect(item.id)}
+            className="bg-white rounded-xl p-5 shadow-sm border border-gray-50 cursor-pointer active:bg-gray-50 transition-colors"
           >
             {/* Title with Blue Bar */}
             <div className="flex items-center mb-3">

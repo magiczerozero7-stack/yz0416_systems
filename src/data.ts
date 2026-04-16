@@ -194,28 +194,191 @@ export const MY_INSTRUCTIONS_DATA = [
     title: '行业数据采购',
     unit: '科技与数字化部',
     content: '请严格把控采购合规与质量，按计划推进，保障项目建设进度。',
-    date: '2026-02-02'
+    date: '2026-02-02',
+    replies: {
+      unitReply: '收到批示，即刻优化采购流程、严控采购成本，确保与项目节点无缝衔接，按期推进。',
+      otherReply: '办公室：遵照批示要求，已梳理采购流程优化点，严格成本管控，保障采购与项目进度同步推进。'
+    }
   },
   {
     id: 2,
     title: '科技研发与数字化项目管理系统建设项目',
     unit: '科技与数字化部',
     content: '优化采购流程，严控成本，确保采购工作与项目节点无缝衔接。',
-    date: '2026-03-06'
+    date: '2026-03-06',
+    replies: {
+      unitReply: '收到批示，即刻优化采购流程、严控采购成本，确保与项目节点无缝衔接，按期推进。',
+      otherReply: '办公室：遵照批示要求，已梳理采购流程优化点，严格成本管控，保障采购与项目进度同步推进。'
+    }
   },
   {
     id: 3,
     title: '集团信创云建设',
     unit: '科技与数字化部',
     content: '加快采购招标落地，强化各部门协同，全力保障项目建设需求。',
-    date: '2026-02-10'
+    date: '2026-02-10',
+    replies: {
+      unitReply: '收到批示，即刻优化采购流程、严控采购成本，确保与项目节点无缝衔接，按期推进。',
+      otherReply: '办公室：遵照批示要求，已梳理采购流程优化点，严格成本管控，保障采购与项目进度同步推进。'
+    }
   },
   {
     id: 4,
     title: '园区智慧运营服务平台',
     unit: '产业促进部',
     content: '严把采购各环节审核关，规范流程，确保项目采购工作高质量推进。',
-    date: '2026-03-15'
+    date: '2026-03-15',
+    replies: {
+      unitReply: '收到批示，即刻优化采购流程、严控采购成本，确保与项目节点无缝衔接，按期推进。',
+      otherReply: '办公室：遵照批示要求，已梳理采购流程优化点，严格成本管控，保障采购与项目进度同步推进。'
+    }
+  }
+];
+
+export const PROJECT_LIBRARY_DATA = [
+  {
+    id: 1,
+    status: '立项',
+    statusColor: 'bg-[#4A86F7]',
+    company: '服贸公司',
+    title: '服务贸易产业互联网平台——中国通关网（一期）',
+    amount: '1200万元',
+    content: '将中国报关协会和东方亚港公司前期建设的中国通关网网站、全球海关商品归类服务平台、跨境贸易知识服务平台进行整合优化，面向跨境贸易企业提供国际经贸规则与贸易便利化咨询服务、跨境供应链一站式整合服务，广泛触达客户额同时，深入结合平台公司供应链服务和园区运营板块，打造跨境贸易一站式服务。',
+    isFollowed: true,
+    type: '科技研发项目'
+  },
+  {
+    id: 2,
+    status: '实施',
+    statusColor: 'bg-[#F59E0B]',
+    company: '城市更新（星箭公司）',
+    title: '可重复使用运载火箭共性技术开发与型号研制（一期）',
+    amount: '2800万元',
+    content: '发布商业火箭领域 3 项标准规范；开展上升/返回全剖面一体化气动布局及热防护技术、大吨位液体运载火箭子结构模态综合分析技术研究；建设共性试验平台，形成 5 项共性试验能力。',
+    isFollowed: false,
+    type: '科技研发项目'
+  },
+  {
+    id: 3,
+    status: '实施',
+    statusColor: 'bg-[#F59E0B]',
+    company: '城市更新（星箭公司）',
+    title: '可重复使用运载火箭技术开发与型号研制',
+    amount: '50万元',
+    content: '形成增压输送 系统检测制造、寿命试验、寿命评估及末级复用相关团体标准 4 项',
+    isFollowed: false,
+    type: '科技研发项目'
+  },
+  {
+    id: 4,
+    status: '验收',
+    statusColor: 'bg-[#4ADE80]',
+    company: '生物医药（科技公司）',
+    title: '基于流式细胞术的小鼠心脏细胞鉴别及GFP表达分析',
+    amount: '30万元',
+    content: '建立一种鉴别小鼠心脏细胞不同亚型和GFP表达分析的流式检测方案',
+    isFollowed: false,
+    type: '科技研发项目'
+  },
+  {
+    id: 5,
+    status: '验收',
+    statusColor: 'bg-[#4ADE80]',
+    company: '生物医药（科技公司）',
+    title: '基于实时细胞分析技术的免疫效应细胞杀伤活性检测',
+    amount: '50万元',
+    content: '建立RTCA法实时分析免疫细胞杀伤功能',
+    isFollowed: false,
+    type: '科技研发项目'
+  }
+];
+
+export const DIGITAL_PROJECT_LIBRARY_DATA = [
+  {
+    id: 101,
+    status: '立项',
+    statusColor: 'bg-[#4A86F7]',
+    company: '科技与数字化部',
+    title: '行业数据采购',
+    amount: '300万元',
+    content: '企业数据、科技数据、产业数据采购，数据接口服务采购',
+    isFollowed: false,
+    type: '数字化项目'
+  },
+  {
+    id: 102,
+    status: '采购',
+    statusColor: 'bg-[#A855F7]',
+    company: '科技与数字化部',
+    title: '科技研发与数字化项目管理系统建设项目',
+    amount: '100万元',
+    content: '实现科技和数字化建设项目全生命周期过程管理和合规管控，为数字化“管、建、运、督”组织提供管理支撑，保障建设项目合规、可控，为建设项目质量控制和价值成效目标达成提供有效管理支撑。',
+    isFollowed: false,
+    type: '数字化项目'
+  },
+  {
+    id: 103,
+    status: '实施',
+    statusColor: 'bg-[#F59E0B]',
+    company: '科技与数字化部',
+    title: '集团全栈信创云服务能力建设',
+    amount: '100万元',
+    content: '建设集团全栈信创云服务能力。建设部署并运营覆盖IaaS/PaaS的集团信创云，在保障业务连续性的同时，满足国家安全合规要求，为集团战略安全保驾护航。',
+    isFollowed: false,
+    type: '数字化项目'
+  },
+  {
+    id: 104,
+    status: '上线',
+    statusColor: 'bg-[#22D3EE]',
+    company: '科技与数字化部',
+    title: '集团信创替代实施',
+    amount: '100万元',
+    content: '信创笔记本采购数量按100台预估、选中高端机型按7000元单价，终端台式电脑采购数量按20台预估，选中高端配置按5500元单价，信创办公软件及授权费用预算10万/年',
+    isFollowed: false,
+    type: '数字化项目'
+  },
+  {
+    id: 105,
+    status: '验收',
+    statusColor: 'bg-[#4ADE80]',
+    company: '科技与数字化部',
+    title: '新一代安全防护体系建设一期',
+    amount: '400万元',
+    content: '根据集团网络安全顶层设计方案进行实施',
+    isFollowed: false,
+    type: '数字化项目'
+  }
+];
+
+export const MY_FOLLOWS_DATA = [
+  {
+    id: 1,
+    title: '园区智慧运营服务平台',
+    unit: '产业促进部',
+    amount: '1186万元',
+    isFollowed: true
+  },
+  {
+    id: 2,
+    title: '科技研发与数字化项目管理系统建设项目',
+    unit: '科技与数字化部',
+    amount: '98万元',
+    isFollowed: false
+  },
+  {
+    id: 3,
+    title: '财务NC65系统服务项目',
+    unit: '财务部',
+    amount: '35万元',
+    isFollowed: true
+  },
+  {
+    id: 4,
+    title: '咖啡机机器手臂采购',
+    unit: '党群工作部',
+    amount: '20万元',
+    isFollowed: true
   }
 ];
 

@@ -19,8 +19,12 @@ import HomePage from './components/HomePage';
 import ProjectMonitorPage from './components/ProjectMonitorPage';
 import PlaceholderPage from './components/PlaceholderPage';
 import ProjectLibraryPage from './components/ProjectLibraryPage';
+import ProjectInstructionPage from './components/ProjectInstructionPage';
 import ChangePasswordPage from './components/ChangePasswordPage';
 import MyInstructionsPage from './components/MyInstructionsPage';
+import MyInstructionsDetailPage from './components/MyInstructionsDetailPage';
+import MyFollowsPage from './components/MyFollowsPage';
+import MyFollowsDetailPage from './components/MyFollowsDetailPage';
 
 // --- Components ---
 
@@ -48,6 +52,9 @@ export default function App() {
   const [quarter, setQuarter] = useState('第一季度');
   const [groupTab, setGroupTab] = useState('集团总部');
   const [selectedYear, setSelectedYear] = useState('2026');
+  const [selectedInstructionId, setSelectedInstructionId] = useState<number | null>(null);
+  const [selectedFollowId, setSelectedFollowId] = useState<number | null>(null);
+  const [instructionProject, setInstructionProject] = useState<any>(null);
   const [isYearDropdownOpen, setIsYearDropdownOpen] = useState(false);
   const [dropdownPos, setDropdownPos] = useState({ top: 0, left: 0 });
   const yearButtonRef = useRef<HTMLButtonElement>(null);
@@ -120,6 +127,22 @@ export default function App() {
         return (
           <ProjectLibraryPage 
             onBack={() => setActiveTab('首页')} 
+            onInstruct={(project) => {
+              setInstructionProject(project);
+              setActiveTab('项目批示');
+            }}
+          />
+        );
+      case '项目批示':
+        return (
+          <ProjectInstructionPage 
+            project={instructionProject}
+            onBack={() => setActiveTab('项目库')}
+            onCancel={() => setActiveTab('项目库')}
+            onSend={() => {
+              // Handle send logic if needed
+              setActiveTab('项目库');
+            }}
           />
         );
       case '修改密码':
@@ -139,12 +162,41 @@ export default function App() {
             onBack={() => setActiveTab('首页')} 
             onChangePassword={() => setActiveTab('修改密码')}
             onMyInstructions={() => setActiveTab('我的批示')}
+            onMyFollows={() => setActiveTab('我的关注')}
           />
         );
       case '我的批示':
         return (
           <MyInstructionsPage 
             onBack={() => setActiveTab('我的')} 
+            onSelect={(id) => {
+              setSelectedInstructionId(id);
+              setActiveTab('我的批示详情');
+            }}
+          />
+        );
+      case '我的关注':
+        return (
+          <MyFollowsPage 
+            onBack={() => setActiveTab('我的')} 
+            onSelect={(id) => {
+              setSelectedFollowId(id);
+              setActiveTab('我的关注详情');
+            }}
+          />
+        );
+      case '我的关注详情':
+        return (
+          <MyFollowsDetailPage 
+            followId={selectedFollowId || 1}
+            onBack={() => setActiveTab('我的关注')}
+          />
+        );
+      case '我的批示详情':
+        return (
+          <MyInstructionsDetailPage 
+            instructionId={selectedInstructionId || 1}
+            onBack={() => setActiveTab('我的批示')}
           />
         );
       default:
@@ -185,17 +237,19 @@ export default function App() {
       </aside>
 
       {/* --- Main Content --- */}
-      <main ref={mainRef} className="flex-1 relative overflow-y-auto bg-[#F9FAFB] pb-24 md:pb-0">
+      <main ref={mainRef} className={`flex-1 relative overflow-y-auto bg-[#F9FAFB] ${activeTab === '项目批示' ? '' : 'pb-24 md:pb-0'}`}>
         {renderContent()}
       </main>
 
       {/* --- Bottom Tab Bar (Mobile/Folded) --- */}
-      <nav className="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-100 flex items-center justify-around px-2 pb-3 pt-2 z-50 shadow-[0_-4px_20px_rgba(0,0,0,0.03)] h-[72px]">
-        <NavItem icon={Home} label="首页" active={activeTab === '首页'} onClick={() => setActiveTab('首页')} variant="bottom" />
-        <NavItem icon={Activity} label="项目监控" active={activeTab === '项目监控'} onClick={() => setActiveTab('项目监控')} variant="bottom" />
-        <NavItem icon={Package} label="项目库" active={activeTab === '项目库'} onClick={() => setActiveTab('项目库')} variant="bottom" />
-        <NavItem icon={User} label="我的" active={activeTab === '我的'} onClick={() => setActiveTab('我的')} variant="bottom" />
-      </nav>
+      {activeTab !== '项目批示' && (
+        <nav className="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-100 flex items-center justify-around px-2 pb-3 pt-2 z-50 shadow-[0_-4px_20px_rgba(0,0,0,0.03)] h-[72px]">
+          <NavItem icon={Home} label="首页" active={activeTab === '首页'} onClick={() => setActiveTab('首页')} variant="bottom" />
+          <NavItem icon={Activity} label="项目监控" active={activeTab === '项目监控'} onClick={() => setActiveTab('项目监控')} variant="bottom" />
+          <NavItem icon={Package} label="项目库" active={activeTab === '项目库'} onClick={() => setActiveTab('项目库')} variant="bottom" />
+          <NavItem icon={User} label="我的" active={activeTab === '我的'} onClick={() => setActiveTab('我的')} variant="bottom" />
+        </nav>
+      )}
 
     </div>
   );
