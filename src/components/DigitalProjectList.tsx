@@ -13,12 +13,13 @@ interface Project {
 }
 
 interface DigitalProjectListProps {
-  projects: Project[];
+  projects: any[];
   onToggleFollow: (id: number) => void;
-  onInstruct: (project: Project) => void;
+  onInstruct: (project: any) => void;
+  onProjectDetail: (project: any) => void;
 }
 
-const DigitalProjectList: React.FC<DigitalProjectListProps> = ({ projects, onToggleFollow, onInstruct }) => {
+const DigitalProjectList: React.FC<DigitalProjectListProps> = ({ projects, onToggleFollow, onInstruct, onProjectDetail }) => {
   return (
     <div className="px-4 space-y-3 pt-1">
       {projects.map((project, index) => (
@@ -30,26 +31,28 @@ const DigitalProjectList: React.FC<DigitalProjectListProps> = ({ projects, onTog
           className="bg-white rounded-xl shadow-sm border border-gray-50 overflow-hidden relative"
         >
           <div className="p-4">
-            <div className="flex justify-between items-start mb-2.5 -mt-4 -ml-4">
-              <div className={`${project.statusColor} text-white text-[11px] font-bold px-4 py-1.5 rounded-br-2xl shadow-sm`}>
-                {project.status}
+            <div onClick={() => onProjectDetail(project)} className="cursor-pointer active:opacity-70 transition-opacity">
+              <div className="flex justify-between items-start mb-2.5 -mt-4 -ml-4">
+                <div className={`${project.statusColor} text-white text-[11px] font-bold px-4 py-1.5 rounded-br-2xl shadow-sm`}>
+                  {project.status}
+                </div>
+                <div className="text-gray-400 text-[11px] font-normal mt-2.5 mr-4">{project.company}</div>
               </div>
-              <div className="text-gray-400 text-[11px] font-normal mt-2.5 mr-4">{project.company}</div>
-            </div>
-            
-            <h3 className="text-base font-bold text-gray-800 mb-1 leading-snug">
-              {project.title}
-            </h3>
-            
-            <div className="space-y-1 mb-2.5">
-              <div className="flex items-center text-sm">
-                <span className="text-gray-400 w-[72px] shrink-0">合同金额：</span>
-                <span className="text-gray-800 font-medium">{project.amount}</span>
-              </div>
-              <div className="text-sm">
-                <div className="text-gray-400 mb-0.5">建设内容：</div>
-                <div className="text-gray-600 leading-snug text-justify">
-                  {project.content}
+              
+              <h3 className="text-base font-bold text-gray-800 mb-1 leading-snug">
+                {project.title}
+              </h3>
+              
+              <div className="space-y-1 mb-2.5">
+                <div className="flex items-center text-sm">
+                  <span className="text-gray-400 w-[72px] shrink-0">合同金额：</span>
+                  <span className="text-gray-800 font-medium">{project.amount}</span>
+                </div>
+                <div className="text-sm">
+                  <div className="text-gray-400 mb-0.5">建设内容：</div>
+                  <div className="text-gray-600 leading-snug text-justify">
+                    {project.content}
+                  </div>
                 </div>
               </div>
             </div>

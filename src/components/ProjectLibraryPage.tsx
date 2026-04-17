@@ -67,7 +67,12 @@ const PickerModal: React.FC<PickerModalProps> = ({ isOpen, onClose, onConfirm, o
   );
 };
 
-const ProjectLibraryPage: React.FC<{ onBack: () => void; onInstruct: (project: any) => void }> = ({ onBack, onInstruct }) => {
+const ProjectLibraryPage: React.FC<{ 
+  onBack: () => void; 
+  onInstruct: (project: any) => void;
+  onProjectDetail: (project: any) => void;
+  onDigitalProjectDetail: (project: any) => void;
+}> = ({ onBack, onInstruct, onProjectDetail, onDigitalProjectDetail }) => {
   const [activeTab, setActiveTab] = useState('科技研发项目');
   const [searchQuery, setSearchQuery] = useState('');
   const [techProjects, setTechProjects] = useState(PROJECT_LIBRARY_DATA);
@@ -187,12 +192,14 @@ const ProjectLibraryPage: React.FC<{ onBack: () => void; onInstruct: (project: a
             projects={techProjects} 
             onToggleFollow={toggleFollowTech} 
             onInstruct={onInstruct}
+            onProjectDetail={onProjectDetail}
           />
         ) : (
           <DigitalProjectList 
             projects={digitalProjects} 
             onToggleFollow={toggleFollowDigital} 
             onInstruct={onInstruct}
+            onProjectDetail={onDigitalProjectDetail}
           />
         )}
       </div>
