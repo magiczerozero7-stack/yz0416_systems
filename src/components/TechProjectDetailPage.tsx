@@ -27,9 +27,9 @@ const TechProjectDetailPage: React.FC<TechProjectDetailPageProps> = ({ project, 
         <h1 className="flex-1 text-center text-white font-medium text-lg mr-8">项目详情</h1>
       </div>
 
-      <div className="flex-1 overflow-y-auto p-3 space-y-3 pb-8">
+      <div className="flex-1 overflow-y-auto p-3 pt-1 md:pt-0 space-y-3 pb-8">
         {/* Project Info Card */}
-        <div className="bg-white rounded-xl p-5 space-y-4 shadow-sm">
+        <div className="bg-white rounded-xl px-5 pb-5 pt-4 md:pt-1 space-y-4 shadow-sm">
           <div className="flex">
             <div className="w-1 bg-[#2B7FFF] rounded-full mr-3 shrink-0" />
             <h2 className="text-[15px] font-bold text-gray-900 leading-tight">

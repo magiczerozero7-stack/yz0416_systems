@@ -112,9 +112,11 @@ const DigitalProjectView: React.FC<{ quarter: string, setQuarter: (q: string) =>
                   outerRadius={60}
                   paddingAngle={5}
                   dataKey="value"
+                  stroke="none"
+                  activeShape={false}
                 >
                   {INVESTMENT_DIST.map((entry, index) => (
-                    <Cell key={`cell-${index}`} fill={entry.color} />
+                    <Cell key={`cell-${index}`} fill={entry.color} stroke="none" />
                   ))}
                 </Pie>
                 <Tooltip contentStyle={{ borderRadius: '12px', border: 'none', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }} />
