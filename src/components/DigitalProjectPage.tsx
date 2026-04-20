@@ -134,7 +134,7 @@ const DigitalProjectPage: React.FC = () => {
                 <XAxis dataKey="name" axisLine={{ stroke: '#E5E7EB' }} tickLine={false} tick={{ fontSize: 12, fill: '#374151' }} angle={-45} textAnchor="end" interval={0} />
                 <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 14, fill: '#9CA3AF' }} domain={[0, 100]} ticks={[0, 20, 40, 60, 80, 100]} />
                 <Tooltip formatter={(value: number) => [value, '项目进度']} cursor={{ fill: '#f3f4f6' }} contentStyle={{ borderRadius: '12px', border: 'none', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }} />
-                <Bar dataKey="value" fill="#3B82F6" radius={[6, 6, 0, 0]} barSize={12} />
+                <Bar dataKey="value" fill="#3B82F6" radius={[6, 6, 0, 0]} barSize={12} stroke="none" />
               </BarChart>
             </ResponsiveContainer>
           </div>

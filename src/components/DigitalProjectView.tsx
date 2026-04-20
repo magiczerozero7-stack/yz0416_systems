@@ -113,7 +113,6 @@ const DigitalProjectView: React.FC<{ quarter: string, setQuarter: (q: string) =>
                   paddingAngle={5}
                   dataKey="value"
                   stroke="none"
-                  activeShape={false}
                 >
                   {INVESTMENT_DIST.map((entry, index) => (
                     <Cell key={`cell-${index}`} fill={entry.color} stroke="none" />
@@ -139,7 +138,7 @@ const DigitalProjectView: React.FC<{ quarter: string, setQuarter: (q: string) =>
                   formatter={(value: any) => [`${Math.round(value)} 万元`, '投资额']}
                   labelFormatter={(label) => `${label} 投资分析`}
                 />
-                <Bar dataKey="amount" fill="#3B82F6" radius={[4, 4, 0, 0]} barSize={12} />
+                <Bar dataKey="amount" fill="#3B82F6" radius={[4, 4, 0, 0]} barSize={12} stroke="none" />
                 <ReferenceLine y={12000} stroke="#EF4444" strokeDasharray="3 3" label={{ position: 'right', value: '12000', fill: '#EF4444', fontSize: 10 }} />
               </BarChart>
             </ResponsiveContainer>

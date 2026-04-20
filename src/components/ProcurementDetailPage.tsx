@@ -20,9 +20,9 @@ const ProcurementDetailPage: React.FC<ProcurementDetailPageProps> = ({ project, 
         <h1 className="flex-1 text-center text-white font-medium text-lg mr-8">项目详情</h1>
       </div>
 
-      <div className="flex-1 overflow-y-auto p-3 pt-1 md:pt-0 pb-8">
+      <div className="flex-1 overflow-y-auto p-3 pb-8">
         {/* Detail Card */}
-        <div className="bg-white rounded-xl px-6 pb-6 pt-5 md:pt-1 shadow-sm space-y-4">
+        <div className="bg-white rounded-xl p-6 shadow-sm space-y-5">
           {/* Title with Blue Bar */}
           <div className="flex items-start">
             <div className="w-1 bg-[#2B7FFF] rounded-full mr-3 mt-1 h-5 shrink-0" />

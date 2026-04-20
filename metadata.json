@@ -1,5 +1,6 @@
 {
-  "name": "Remix:亦庄项目管理平台",
+  "name": "未加聊天版本:亦庄项目管理平台",
   "description": "适配华为 Mate X6 折叠屏的企业级数据看板，支持内外屏流转与响应式布局重构。",
-  "requestFramePermissions": []
+  "requestFramePermissions": [],
+  "majorCapabilities": []
 }

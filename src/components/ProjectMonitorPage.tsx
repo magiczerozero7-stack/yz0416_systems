@@ -60,12 +60,12 @@ const ProjectMonitorPage: React.FC<{
   }, [isYearDropdownOpen]);
 
   return (
-    <div className="relative min-h-full bg-[#F9FAFB] pb-4 md:pb-2 overflow-x-hidden">
+    <div className="relative min-h-full bg-[#F9FAFB] pb-20 md:pb-2">
       {/* --- Background Split --- */}
       <div className="absolute top-0 left-0 right-0 h-[156px] md:h-[170px] bg-blue-600 md:bg-[#2662F3] z-0" />
 
       {/* --- Sticky Header --- */}
-      <header className="sticky top-0 z-40 w-full bg-blue-600 md:bg-[#2662F3] px-4 pt-6 pb-2.5 md:px-8 md:pt-3 md:pb-1.5 flex flex-col border-b border-blue-500/20">
+      <header className="sticky top-0 z-50 w-full bg-blue-600 md:bg-[#2662F3] px-4 pt-6 pb-2.5 md:px-8 md:py-3 flex flex-col">
         <div className="relative z-10 flex flex-col w-full max-w-7xl mx-auto">
           <div className="flex items-center justify-between mb-1.5">
             <div className="relative">
@@ -117,7 +117,7 @@ const ProjectMonitorPage: React.FC<{
       </header>
 
       {/* --- Content --- */}
-      <main className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 pt-2 md:pt-3 pb-0">
+      <main className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 pt-3 md:pt-6 pb-0">
         {projectType === '科技研发项目' ? (
           <div className="space-y-4 md:space-y-6">
             {/* Top Section: Completion Rate & Stages - REDESIGNED per Ref Image */}
@@ -280,7 +280,7 @@ const ProjectMonitorPage: React.FC<{
                         cursor={{ fill: '#f3f4f6' }} 
                         contentStyle={{ borderRadius: '12px', border: 'none', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }} 
                       />
-                      <Bar dataKey="value" fill="#3B82F6" radius={[10, 10, 0, 0]} barSize={12} />
+                      <Bar dataKey="value" fill="#3B82F6" radius={[10, 10, 0, 0]} barSize={12} stroke="none" />
                     </BarChart>
                   </ResponsiveContainer>
                 </div>

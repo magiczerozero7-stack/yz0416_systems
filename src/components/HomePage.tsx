@@ -46,7 +46,7 @@ const HomePage: React.FC<HomePageProps> = ({
   const years = ['2024', '2025', '2026'];
 
   return (
-    <div className="relative min-h-full overflow-x-hidden">
+    <div className="relative min-h-full">
       {/* --- Sharp Background Split (Blue top, Gray bottom) --- */}
       <div 
         className="absolute top-0 left-0 right-0 h-[156px] md:h-[170px] bg-blue-600 md:bg-[#2662F3] z-0" 
@@ -57,7 +57,7 @@ const HomePage: React.FC<HomePageProps> = ({
       </div>
 
       {/* --- Sticky Compact Header --- */}
-      <header className="sticky top-0 z-40 w-full bg-blue-600 md:bg-[#2662F3] px-4 pt-6 pb-2.5 md:px-8 md:pt-3 md:pb-1.5 flex flex-col border-b border-blue-500/20">
+      <header className="sticky top-0 z-50 w-full bg-blue-600 md:bg-[#2662F3] px-4 pt-6 pb-2.5 md:px-8 md:py-3 flex flex-col">
         <div className="relative z-10 flex flex-col w-full max-w-7xl mx-auto">
           <div className="flex items-center justify-between mb-1.5 md:mb-1.5">
             <div className="relative">
@@ -118,7 +118,7 @@ const HomePage: React.FC<HomePageProps> = ({
             </div>
           </div>
 
-          <div className="flex items-center justify-center md:justify-end mt-0.5 md:mt-0">
+          <div className="flex items-center justify-center md:justify-end mt-0.5 md:mt-1">
             {/* Project Type Tabs */}
             <div className="flex bg-white/10 backdrop-blur-md p-1 rounded-[30px] border border-white/10 w-full md:w-auto">
               {['科技研发项目', '数字化项目'].map((tab) => (
@@ -140,7 +140,7 @@ const HomePage: React.FC<HomePageProps> = ({
       </header>
 
       {/* --- Content Grid --- */}
-      <div className="relative z-10 pt-2 md:pt-3 pb-10">
+      <div className="relative z-10 pt-2 md:pt-6 pb-10">
         {projectType === '科技研发项目' ? (
           <TechProjectView 
             quarter={quarter} 
@@ -159,7 +159,7 @@ const HomePage: React.FC<HomePageProps> = ({
       </div>
 
       {/* Footer Padding */}
-      <div className="h-4 md:h-8" />
+      <div className="h-20 md:h-8" />
     </div>
   );
 };

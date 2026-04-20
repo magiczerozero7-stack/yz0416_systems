@@ -1,19 +1,5 @@
 @import "tailwindcss";
 
-@layer base {
-  /* Remove focus outline from charts and SVGs */
-  .recharts-wrapper:focus,
-  .recharts-surface:focus,
-  .recharts-sector:focus,
-  path:focus,
-  g:focus,
-  svg:focus {
-    outline: none !important;
-  }
-
-  .recharts-wrapper,
-  .recharts-surface,
-  svg {
-    -webkit-tap-highlight-color: transparent;
-  }
+svg:focus, path:focus, g:focus, .recharts-wrapper *:focus {
+  outline: none;
 }

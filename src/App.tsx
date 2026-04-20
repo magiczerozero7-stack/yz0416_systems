@@ -303,7 +303,7 @@ export default function App() {
       </aside>
 
       {/* --- Main Content --- */}
-      <main ref={mainRef} className={`flex-1 relative overflow-y-auto overflow-x-hidden bg-[#F9FAFB] ${(activeTab === '项目批示' || activeTab === '项目详情' || activeTab === '数字化项目详情' || activeTab === '项目采购详情' || activeTab === '文件预览') ? '' : 'pb-20 md:pb-0'}`}>
+      <main ref={mainRef} className={`flex-1 min-w-0 relative overflow-y-auto overflow-x-hidden bg-[#F9FAFB] ${(activeTab === '项目批示' || activeTab === '项目详情' || activeTab === '数字化项目详情' || activeTab === '项目采购详情' || activeTab === '文件预览') ? '' : 'pb-24 md:pb-0'}`}>
         {renderContent()}
       </main>
 
